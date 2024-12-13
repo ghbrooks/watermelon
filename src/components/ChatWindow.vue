@@ -27,13 +27,31 @@ const loadContact = () => {
   contact.value = contacts.find((c: { id: number }) => c.id === contactId)
 }
 
-const sendMessage = () => {
+let botMessageId = 1
+
+const getBotResponse = async () => {
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${botMessageId}`)
+    const data = await response.json()
+    contact.value.messages.push({
+      from: contact.value.name,
+      text: data.title,
+    })
+    botMessageId++
+  } catch (error) {
+    console.error('Error fetching bot response:', error)
+  }
+}
+
+const sendMessage = async () => {
   if (newMessage.value.trim() !== '') {
     contact.value.messages.push({
       from: 'You',
       text: newMessage.value,
     })
     newMessage.value = ''
+    await getBotResponse()
   }
 }
 
