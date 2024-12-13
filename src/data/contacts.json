@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "messages": [
+      { "from": "Alice", "text": "Hi there!" },
+      { "from": "You", "text": "Hello Alice!" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "messages": [
+      { "from": "Bob", "text": "Hey!" },
+      { "from": "You", "text": "Hi Bob!" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Charlie",
+    "messages": [
+      { "from": "Charlie", "text": "Good morning!" },
+      { "from": "You", "text": "Good morning Charlie!" }
+    ]
+  }
+]
