@@ -67,9 +67,7 @@ watch(route, loadContact)
 .message {
   margin-bottom: 0.5rem;
 }
-</style>
 
-<style scoped>
 .messages {
   margin-top: 1rem;
 }
